@@ -90,7 +90,7 @@ public class Menu {
             System.out.print("Elige una opción: ");
             option = scanner.nextInt();
             scanner.nextLine();  // Consumir el salto de línea
-
+s
             switch (option) {
                 case 1:
                     System.out.print("Introduce el nombre del producto: ");
