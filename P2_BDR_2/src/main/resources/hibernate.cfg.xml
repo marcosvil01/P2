@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+
+        <!-- Configuración de la conexión JDBC -->
+        <!-- Clase del driver JDBC para conectarse a MySQL -->
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <!-- URL de la base de datos, incluyendo la base de datos 'restaurante' en el puerto 3306 -->
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/restaurante</property>
+        <!-- Nombre de usuario para la conexión a la base de datos -->
+        <property name="hibernate.connection.username">root</property>
+        <!-- Contraseña para la conexión a la base de datos (actualmente vacío) -->
+        <property name="hibernate.connection.password"/>
+
+        <!-- Dialecto SQL -->
+        <!-- Indica el dialecto específico para MySQL -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+
+        <!-- Estrategia de manejo del esquema de la base de datos -->
+        <!-- 'update' permite actualizar el esquema automáticamente cada vez que se ejecuta la aplicación -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- Mostrar SQL en la consola -->
+        <!-- Muestra las consultas SQL generadas por Hibernate en la consola -->
+        <property name="hibernate.show_sql">true</property>
+
+        <!-- Contexto de sesión -->
+        <!-- Define cómo se gestionarán las sesiones de Hibernate. 'thread' significa que cada hilo tiene su propia sesión -->
+        <property name="hibernate.current_session_context_class">thread</property>
+
+        <!-- Mapeo de clases anotadas (entidades) -->
+        <!-- Las siguientes clases representan las entidades del modelo que serán mapeadas por Hibernate -->
+        <mapping class="model.Cliente"/>
+        <mapping class="model.Mesa"/>
+        <mapping class="model.Reserva"/>
+
+    </session-factory>
+</hibernate-configuration>
