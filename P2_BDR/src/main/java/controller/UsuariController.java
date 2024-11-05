@@ -21,6 +21,7 @@ public class UsuariController {
                 .buildSessionFactory();
     }
 
+    // Mètode per afegir un nou usuari a la base de dades
     public void afegirUsuari(String nom, String correu) {
         Session session = factory.openSession();
         Transaction transaction = null;
@@ -38,6 +39,7 @@ public class UsuariController {
         }
     }
 
+    // Mètode per afegir una nova comanda per a un usuari específic
     public void afegirComanda(int usuariId, String producte, double preu, String detall) {
         Session session = factory.openSession();
         Transaction transaction = null;
@@ -60,6 +62,7 @@ public class UsuariController {
         }
     }
 
+    // Mètode per consultar totes les comandes d'un usuari
     public void consultarComandes(int usuariId) {
         Session session = factory.openSession();
         Transaction transaction = null;
@@ -90,6 +93,7 @@ public class UsuariController {
         }
     }
 
+    // Mètode per modificar el correu electrònic d'un usuari
     public void modificarCorreu(int usuariId, String nouCorreu) {
         Session session = factory.openSession();
         Transaction transaction = null;
@@ -111,6 +115,7 @@ public class UsuariController {
         }
     }
 
+    // Mètode per eliminar una comanda per ID
     public void eliminarComanda(int comandaId) {
         Session session = factory.openSession();
         Transaction transaction = null;
@@ -132,6 +137,7 @@ public class UsuariController {
         }
     }
 
+    // Mètode per llistar tots els usuaris de la base de dades
     public void listarUsuaris() {
         Session session = factory.openSession();
         Transaction transaction = null;
@@ -150,6 +156,7 @@ public class UsuariController {
         }
     }
 
+    // Mètode per tancar la fàbrica de sessions
     public void tancar() {
         factory.close();
     }
